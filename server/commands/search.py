@@ -24,7 +24,7 @@ def parse_subject_info():
 
     subject_info = {"faculties": set()}
 
-    with open('subjectinfo.json', 'r') as f:
+    with open('data/subjectinfo.json', 'r') as f:
         subjects = json.load(f)
 
     for faculty in subjects:
