@@ -1,5 +1,6 @@
 function autocomplete(courses) {
-    const searchInput = document.getElementById('myInput')
+    const searchInput = document.getElementById('myInput');
+    searchInput.focus();
     let suggests = null;
     let suggestPanel = document.querySelector('.suggestions');
     searchInput.addEventListener('keyup', function() {
@@ -18,8 +19,8 @@ function autocomplete(courses) {
                 suggestPanel.innerHTML = ''
             }
         }
-        if (input.length < 4 || input.slice(0,4) in courses) {
-            suggests.slice(0,5).forEach(function(suggest) {
+        if (input.length != 0 && (input.length < 4 || input.slice(0,4) in courses)) {
+            suggests.forEach(function(suggest) {
                 const div = document.createElement('div');
                 div.innerHTML = input.length < 4 ? suggest : suggest.code;
                 div.addEventListener('click', () => {

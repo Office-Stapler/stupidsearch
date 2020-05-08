@@ -1,9 +1,14 @@
-/* input {
-    border: 1px solid transparent;
-    background-color: #f1f1f1;
-    padding: 1%;
-    margin: auto;
-} */
+.header {
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+    background: #1abc9c;
+    color: white;
+    font-size: 30px;
+}
+
+
 body {
     background-color: #2f2fa2;
     color: #ffffff;
@@ -46,15 +51,6 @@ input[type=text] {
 }
 
 
-.suggestBox { 
-    text-align: center;
-    background-color: #143d59; 
-    font-size: 20px;
-    color: #ffffff;
-    width: 15%;
-}
-
-
 
 
 input[type=submit] {
@@ -65,21 +61,27 @@ input[type=submit] {
     padding: 2px solid transparent;
     width: 10%;
     height: 40px;
+    margin-left: 45%;
 }
 
 input[type=submit]:hover {
     opacity: 100%;
     transition: 0.2s;
 }
-
+.suggestions {
+    width: 15%;
+    height: 100px;
+    overflow-y: auto;
+    scroll-behavior: auto;
+    margin: auto;
+}
 .suggestions > div {
     padding: 10px;
     font-size: 15px;
     color: #ffffff;
     background-color: #2e2e2e;
-    width: 13.5%;
+    width: 85%;
     border: 1px #1e4dd4 solid;
-    margin: auto;
 }
 
 .suggestions > div:hover {
