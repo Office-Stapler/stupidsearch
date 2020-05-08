@@ -14,16 +14,26 @@ function autocomplete(courses) {
                 suggests = courses[input.slice(0,4)].filter(function(course) {
                     return course.code.startsWith(input);
                 })
+            } else {
+                suggestPanel.innerHTML = ''
             }
         }
-        suggests.slice(0,10).forEach(function(suggest) {
-            const div = document.createElement('div');
-            div.innerHTML = input.length < 4 ? suggest : suggest.code;
-            suggestPanel.appendChild(div);
-        })
+        if (input.length < 4 || input.slice(0,4) in courses) {
+            suggests.slice(0,5).forEach(function(suggest) {
+                const div = document.createElement('div');
+                div.innerHTML = input.length < 4 ? suggest : suggest.code;
+                div.addEventListener('click', () => {
+                    searchInput.value = div.innerHTML;
+                    suggestPanel.innerHTML = '';
+                    searchInput.focus();
+                });
+                suggestPanel.appendChild(div);
+            })
+        }
         if (input === '') {
             suggestPanel.innerHTML = '';
         }
+
     });
 }
 

@@ -9,14 +9,21 @@ body {
     color: #ffffff;
     font-family: Arial, Helvetica, sans-serif;
 }
-
-
-.search {
-    margin: auto auto auto auto;
-    text-align: left;
+p {
+    text-align: center;
+    font-weight: normal;
 }
+
+.overview {
+    font-weight: bolder;
+}
+
+.terms {
+    font-weight: bolder;
+}
+
 .autocomplete {
-    text-align: left;
+    text-align: center;
 }
 .info-container {
     text-align: center;
@@ -27,12 +34,28 @@ body {
     color: #ffffff;
 }
 
-.search input[type=text] { 
+input[type=text] { 
+    background-color: #143d59; 
+    font-size: 20px;
+    color: #ffffff;
+    width: 15%;
+}
+
+.search{
+    text-align: center;
+}
+
+
+.suggestBox { 
     text-align: center;
     background-color: #143d59; 
     font-size: 20px;
     color: #ffffff;
+    width: 15%;
 }
+
+
+
 
 input[type=submit] {
     background-color: DodgerBlue;
@@ -47,7 +70,6 @@ input[type=submit] {
 input[type=submit]:hover {
     opacity: 100%;
     transition: 0.2s;
-    
 }
 
 .suggestions > div {
@@ -55,14 +77,13 @@ input[type=submit]:hover {
     font-size: 15px;
     color: #ffffff;
     background-color: #2e2e2e;
-    width: auto;
+    width: 13.5%;
     border: 1px #1e4dd4 solid;
-    text-align: center;
+    margin: auto;
 }
 
 .suggestions > div:hover {
     background-color: #1e4dd4;
     transition: 0.2s;
     cursor: pointer;
-    
 }
