@@ -1,9 +1,9 @@
+const searchInput = document.getElementById('myInput');
 function autocomplete(courses) {
-    const searchInput = document.getElementById('myInput');
     searchInput.focus();
     let suggests = null;
     let suggestPanel = document.querySelector('.suggestions');
-    searchInput.addEventListener('keyup', function() {
+    searchInput.addEventListener('keyup', () => {
         suggestPanel.innerHTML = '';
         const input = searchInput.value.toUpperCase();
         if (input.length < 4 && input.length != 0) {
@@ -22,21 +22,23 @@ function autocomplete(courses) {
         if (input.length != 0 && (input.length < 4 || input.slice(0,4) in courses)) {
             suggests.forEach(function(suggest) {
                 const div = document.createElement('div');
-                div.innerHTML = input.length < 4 ? suggest : suggest.code;
+                div.innerHTML = input.length < 4 ? suggest : suggest.code + ' <b>' +  suggest.name + '</b>';
                 div.addEventListener('click', () => {
-                    searchInput.value = div.innerHTML;
+                    searchInput.value = div.innerHTML.slice(0,8);
                     suggestPanel.innerHTML = '';
                     searchInput.focus();
                 });
+                div.className = 'suggest'
                 suggestPanel.appendChild(div);
             })
         }
         if (input === '') {
             suggestPanel.innerHTML = '';
         }
-
     });
 }
+
+
 
 fetch('http://127.0.0.1:5000/get_courses')
 .then(resp => resp.json())

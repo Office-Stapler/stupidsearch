@@ -27,6 +27,10 @@ p {
     font-weight: bolder;
 }
 
+.conditions {
+    font-weight: bolder;
+}
+
 .autocomplete {
     text-align: center;
 }
@@ -43,15 +47,16 @@ input[type=text] {
     background-color: #143d59; 
     font-size: 20px;
     color: #ffffff;
-    width: 15%;
+    width: 30%;
 }
 
 .search{
     text-align: center;
 }
 
-
-
+b {
+    color: red;
+}
 
 input[type=submit] {
     background-color: DodgerBlue;
@@ -68,20 +73,29 @@ input[type=submit]:hover {
     opacity: 100%;
     transition: 0.2s;
 }
-.suggestions {
-    width: 15%;
-    height: 100px;
-    overflow-y: auto;
-    scroll-behavior: auto;
-    margin: auto;
+
+.submitHover {
+    background-color: #1e4dd4;
 }
-.suggestions > div {
+.suggestions > suggest {
     padding: 10px;
     font-size: 15px;
     color: #ffffff;
     background-color: #2e2e2e;
     width: 85%;
     border: 1px #1e4dd4 solid;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.suggestions {
+    width: 30%;
+    height: 100px;
+    overflow-y: auto;
+    scroll-behavior: auto;
+    text-align: center;
+    z-index: 1;
 }
 
 .suggestions > div:hover {

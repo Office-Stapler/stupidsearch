@@ -11,7 +11,8 @@ function getInfo() {
         if (resp.hasOwnProperty('name')) {
             const courseCode = document.querySelector('.main-info');
             const overviewElement = document.querySelector('.overview');
-            const termsElement = document.querySelector('.terms')
+            const termsElement = document.querySelector('.terms');
+            const condElement = document.querySelector('.conditions')
             let suggestPanel = document.querySelector('.suggestions');
             
             termsElement.innerHTML = '<h1>Terms</h1>'
@@ -19,6 +20,9 @@ function getInfo() {
             overviewElement.innerHTML = '<h1>Overview</h1>'
             code = input.value;
             courseCode.innerHTML = `<h1>About ${code.toUpperCase()}</h1>`;
+
+            condElement.innerHTML = '<h1>Conditions for Enrolment</h1>'
+
             let name = document.createElement('p');
             name.innerHTML = resp.name;
             courseCode.appendChild(name);
@@ -30,7 +34,12 @@ function getInfo() {
             let terms = document.createElement('p');
             terms.innerHTML = resp.terms;
             termsElement.appendChild(terms);
-            
+
+            let conditions = document.createElement('p');
+            console.log(resp);
+            conditions.innerHTML = resp.prereq.length != 0 ? resp.prereq : 'None';
+            condElement.appendChild(conditions);
+
             input.value = ''
             suggestPanel.innerHTML = ''
         }

@@ -93,11 +93,13 @@ def search(query):
     for subject in subjects[faculty_code]:
         if subject["code"] == query:
             name = subject["name"]
+            prereq = subject['prereq']
 
     overview, offering = get_handbook_details(query)
 
     return {
         'overview': overview,
         'terms': offering,
-        'name': name
+        'name': name,
+        'prereq': prereq
     }

@@ -12,7 +12,6 @@ def get_courses():
 @APP.route('/info', methods=['GET'])
 def info():
     course_code = flask.request.args.get('code')
-    print(course_code)
     info = search.search(course_code)
     if not info or isinstance(info, list):
         return {}
