@@ -39,7 +39,6 @@ function autocomplete(courses) {
 }
 
 
-
 fetch('http://127.0.0.1:5000/get_courses')
 .then(resp => resp.json())
 .then(courses => autocomplete(courses));

@@ -1,10 +1,20 @@
 const submit = document.getElementById("mySubmit");
 
 const baseURL = 'http://localhost:5000'
-
 function getInfo() {
+    let suggestPanel = document.querySelector('.suggestions');
     const input = document.getElementById("myInput");
-    let reqURL = baseURL + `/info?code=${input.value}`
+    let reqURL = baseURL + `/info?code=${input.value}`;
+
+    if (selections > 0) {
+        children = suggest.childNodes;
+        input.value = children[selections - 1].innerHTML.slice(0,8);
+        selections = 0;
+        suggestPanel.innerHTML = ''
+        getInfo();
+        return;
+    }
+
     fetch(reqURL)
     .then(req => req.json())
     .then(resp => {
@@ -13,7 +23,6 @@ function getInfo() {
             const overviewElement = document.querySelector('.overview');
             const termsElement = document.querySelector('.terms');
             const condElement = document.querySelector('.conditions')
-            let suggestPanel = document.querySelector('.suggestions');
             
             termsElement.innerHTML = '<h1>Terms</h1>'
             courseCode.innerHTML = ''
