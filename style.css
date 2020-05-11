@@ -13,6 +13,7 @@ body {
     background-color: #2e2d2d;
     color: #ffffff;
     font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
 }
 p {
     text-align: center;
@@ -100,4 +101,13 @@ input[type=submit]:hover {
     background-color: #1e4dd4;
     transition: 0.2s;
     cursor: pointer;
+}
+
+.selected {
+    background-color: #1e4dd4;
+    padding: 10px;
+    font-size: 15px;
+    color: #ffffff;
+    border: 1px #1e4dd4 solid;
+    text-align: left;
 }
