@@ -28,5 +28,10 @@ Then you can run the requirements.txt, which the server needs to run.
 ```sh
 pip3 install -r server/requirements.txt
 ```
+After finishing you can deactivate the virtual environment with:
+```sh
+deactivate
+```
+
 Then run the `server.py` in the server folder.
 After the server is up, you open `index.html`
