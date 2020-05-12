@@ -6,11 +6,14 @@ function getInfo() {
     const input = document.getElementById("myInput");
     let reqURL = baseURL + `/info?code=${input.value}`;
 
-    if (selections > 0) {
+    if (hasSelection) {
         children = suggest.childNodes;
+        if (selections == 0)
+            selections = 1
         input.value = children[selections - 1].innerHTML.slice(0,8);
         selections = 0;
         suggestPanel.innerHTML = ''
+        hasSelection = false;
         getInfo();
         return;
     }
